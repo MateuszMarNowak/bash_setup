@@ -88,4 +88,3 @@ main
 
 read -rsn1 -p "To apply new configuration you have to reopen terminal. Press any key to continue"
 exit 0
-
