@@ -46,3 +46,10 @@ function git-abandon-branch {
                     ;;
     esac
 }
+
+function git-remove-branches {
+    for branch in `git branch | grep -v main`
+    do
+        git branch -d $branch
+    done
+}
