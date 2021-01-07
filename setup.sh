@@ -38,10 +38,8 @@ catchError() {
 createConfFiles() {
     if test -e ${1}.bash_profile
     then
-        echo "istnieje"
         cat conf_dir/bash_profile > ${1}.bash_profile
     else
-        echo "nie istnieje"
         cp conf_dir/bash_profile ${1}.bash_profile
     fi
 
@@ -71,17 +69,13 @@ copyCodeFiles() {
 
 main() {
     local script_path=`askMode`
-    echo $script_path
     catchError $script_path
-    echo "Mode"
 
     createConfFiles $script_path
     catchError $?
-    echo "conffiles"
 
     copyCodeFiles $script_path
     catchError $?
-    echo "copy code files"
 }
 
 main
