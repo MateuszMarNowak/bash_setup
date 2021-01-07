@@ -1,0 +1,12 @@
+if test -d ~/.bashrc.d ; then
+    for file in ~/.bashrc.d/*.d
+    do
+        . $file
+    echo "Sourced ${file}"
+    done
+fi
+
+mkcd ()
+{
+  mkdir -p -- "$1" && cd -P -- "$1"
+}
