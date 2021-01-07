@@ -4,7 +4,6 @@ function git-add-commit-push {
         read -p "Empty message, are you sure? [y]" switch
         case $switch in
                         'y')
-                        msg="empty"
                         ;;
                         *)
                         echo "aborted"
@@ -12,12 +11,10 @@ function git-add-commit-push {
                         ;;
         esac
     else
-        msg="'$*'"
+        git add .
+        git commit -m "'$*'"
+        git-push
     fi
-
-    git add .
-    git commit -m $msg
-    git-push
 }
 
 function git-push {
