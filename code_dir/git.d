@@ -38,7 +38,7 @@ function git-abandon-branch {
     read -p "Hit key: " switch
     case $switch in
                     'y')
-                    git checkout master
+                    git checkout main
                     git branch -d $currentBranch
                     ;;
                     *)
