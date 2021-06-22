@@ -59,7 +59,7 @@ function git-abandon-branch {
 	read -p "Hit key: " switch
 	case $switch in 
 				'y')
-				git checkout master
+				git checkout $toGoBranch
 				git branch -D $currentBranch
 				;;
 				*)
